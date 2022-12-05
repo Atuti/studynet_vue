@@ -1,5 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import SignUpView from '../views/SignUpView.vue'
+import LogInView from '../views/LogInView.vue'
+
+import CoursesView from '../views/CoursesView.vue'
+import CourseView from '../views/CourseView.vue'
+import Author from '../views/Author.vue'
+
+import MyAccountView from '../views/dashboard/MyAccountView.vue'
+import CreateCourse from '../views/dashboard/CreateCourse.vue'
 
 const routes = [
   {
@@ -10,10 +20,43 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: AboutView
+  },
+  {
+    path: '/sign-up',
+    name: 'signup',
+    component: SignUpView
+  },
+  {
+    path: '/log-in',
+    name: 'login',
+    component: LogInView
+  },
+  {
+    path: '/courses',
+    name: 'courses',
+    component: CoursesView
+  },
+  {
+    path: '/courses/:slug',
+    name: 'course',
+    component: CourseView
+  },
+  {
+    path: '/authors/:id',
+    name: 'author',
+    component: Author
+  },
+
+  {
+    path: '/dashboard/my-account',
+    name: 'myaccount',
+    component: MyAccountView
+  },
+  {
+    path: '/dashboard/create-course',
+    name: 'createcourse',
+    component: CreateCourse
   }
 ]
 
